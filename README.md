@@ -180,3 +180,51 @@ out=out+1;
 end
 endmodule
 ```
+
+**OUTPUT WAVEFORM:**
+
+![image](https://github.com/rupeshjb/VLSI-LAB-EXP-4/assets/119603360/c7d32766-147b-47be-9c11-847bb388b016)
+
+
+
+
+## VERILOG CODE:
+
+```
+module ripplecounter(q, clk, reset);
+output [3:0] q;
+input clk, reset;
+T_FF tff0(q[0], clk, reset);
+T_FF tff1(q[1], q[0], reset);
+T_FF tff2(q[2], q[1], reset);
+T_FF tff3(q[3], q[2], reset);
+endmodule
+module T_FF(q, clk, reset);
+output q;
+input clk, reset;
+wire d;
+D_FF dff0(q, d, clk, reset);
+not n1(d, q); 
+endmodule
+
+module D_FF(q, d, clk, reset);
+output q;
+input d, clk, reset;
+reg q;
+always @(posedge reset or negedge clk)
+if (reset)
+q = 1'b0;
+else
+q = d;
+endmodule
+```
+**OUTPUT WAVEFORM:**
+
+![image](https://github.com/rupeshjb/VLSI-LAB-EXP-4/assets/119603360/da95aafd-b0e6-4ca1-9e0b-70bbd3083e02)
+
+
+**RESULT:**
+
+&emsp;&emsp;Thus the simulation of sequential circuits is done and outputs are verified
+successfully.
+
