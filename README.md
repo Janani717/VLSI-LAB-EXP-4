@@ -2,9 +2,10 @@
 ## AIM: 
 To simulate and synthesis SR, JK, T, D - FLIPFLOP, COUNTER DESIGN using Xilinx ISE.
 
-APPARATUS REQUIRED:Xilinx 14.7 Spartan6 FPGA
+## APPARATUS REQUIRED:
+Xilinx 14.7 Spartan6 FPGA
 
-LOGIC DIAGRAM
+## LOGIC DIAGRAM
 
 SR FLIPFLOP
 
